@@ -1,11 +1,3 @@
-//
-//  ai.h
-//  ai-final
-//
-//  Created by 虞晨曦 on 2019/1/21.
-//  Copyright © 2019年 虞晨曦. All rights reserved.
-//
-
 #ifndef ai_h
 #define ai_h
 
@@ -227,36 +219,6 @@ int nextStep(uint64_t& boardq, uint64_t& boardt, bool curcolor){
     boardq = curboardq;
     boardt = curboardt;
     return 1;
-}
-
-int totalmoves(uint64_t boardq, uint64_t boardt, int color){
-    int i = 0;
-    int k = 0;
-    uint64_t y = uint64_t(1);
-    uint64_t queen[4];
-    if (color) {
-        while (y){
-            if ((boardq & y) && (boardt & y)){
-                queen[k] = y;
-                k++;
-            }
-            y <<= 1;
-        }
-    }else{
-        while (y){
-            if ((boardq & y) && !(boardt & y)){
-                queen[k] = y;
-                k++;
-            }
-            y <<= 1;
-        }
-    }
-    int total = 0;
-    for (i = 0; i < 4; i++){
-        uint64_t* moves = validMoves(queen[i], boardq, boardt, 0);
-        total += moves[0];
-    }
-    return total;
 }
 
 uint64_t forbidden[4];

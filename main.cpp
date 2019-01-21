@@ -1,10 +1,3 @@
-//
-//  main.cpp
-//  mcts--
-//
-//  Created by 虞晨曦 on 2018/12/17.
-//  Copyright © 2018年 虞晨曦. All rights reserved.
-//
 #include <iostream>
 #include <ctime>
 #include <stdint.h>
